@@ -1,0 +1,22 @@
+---
+//components import
+import Head from "./Head.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro"
+//types import
+import type {LayoutProps} from "./types"
+
+//styles import 
+import "../styles/global.css"
+
+const {title,description} =  Astro.props as LayoutProps
+
+---
+<html lang="en">
+	<Head {title} {description}/>
+	<body>
+		<Nav/>		
+		<slot>Welcome to the Blog!</slot>
+	</body>
+	<Footer/>
+</html>

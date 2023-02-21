@@ -1,15 +1,13 @@
 ---
+import Main from "../layouts/Main.astro";
+
+const test = "test"
+const number = 10
+const arr = ['a','b','c']
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main title="Home" description="Home Page">
+	<h1>Astro, {test},{number}</h1>
+</Main>
+
+
