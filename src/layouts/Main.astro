@@ -15,8 +15,10 @@ const {title,description} =  Astro.props as LayoutProps
 <html lang="en">
 	<Head {title} {description}/>
 	<body>
-		<Nav/>		
-		<slot>Welcome to the Blog!</slot>
+		<Nav/>
+		<main>
+			<slot> Default Text</slot>	
+		</main>		
 	</body>
 	<Footer/>
 </html>

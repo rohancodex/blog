@@ -1,4 +1,5 @@
 ---
+import Link from "../components/Link.astro";
 import Main from "../layouts/Main.astro";
 
 const test = "test"
@@ -7,7 +8,16 @@ const arr = ['a','b','c']
 ---
 
 <Main title="Home" description="Home Page">
-	<h1>Astro, {test},{number}</h1>
+	<section class="container grid grid-cols-[1fr_2fr]" aria-label="About Me">
+        <img class="hero-img" src="/images/hero.jpeg" alt="Hero image" width="500" height="500">
+        <div class="flex flex-col justify-around">
+            <div>
+                <h1 class="h1">Hey! It's me</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse consequatur cupiditate adipisci illo minus suscipit atque nesciunt, eveniet, quo quam corrupti modi ipsum asperiores, velit ipsa natus pariatur blanditiis nisi?</p>
+            </div>
+            <Link href="#" style="primary" text="Let's Connect"/>
+        </div>
+    </section>
 </Main>
 
 

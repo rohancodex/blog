@@ -1,20 +1,39 @@
 ---
 //library imports
-import { Icon } from 'astro-icon'
+import { Icon } from "astro-icon";
 
-//data imports
-import navData from '../data/navData'
+//data imports``
+import navData from "../data/navData";
+import Link from "./Link.astro";
 ---
 
 <nav aria-label="Primary">
   <div class="navbar">
     <a href="/" aria-label="Go Home" class="logomark">
-        <Icon name="logo" width="50"/>
+      <Icon name="logo" width="50" />
     </a>
     <ul>
       {
-        navData?.map(item=> <a href={item?.path}>{item?.name}</a>)
+        navData?.map((item) => (
+          <Link
+            href={item?.path}
+            text={item.name}
+            style="secondary"
+            isFilled={false}
+            data-navLink
+          />
+        ))
       }
     </ul>
   </div>
 </nav>
+
+<script>
+  // current page style on nav links
+  const navLinks = document.querySelectorAll("[data-navLink]");
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === window.location.pathname) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+</script>

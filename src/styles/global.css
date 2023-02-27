@@ -340,10 +340,10 @@ button:focus-visible {
   width: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem));
   width: var(--fs-md);
 }
-/* 
+
 .link.primary {
   --type: hsl(var(--txt));
-} */
+}
 
 .link.secondary {
   --type: hsl(var(--accent));
@@ -363,6 +363,7 @@ button:focus-visible {
 
 .link[aria-current="page"] {
   --type: hsl(var(--accent));
+  color:hsl(var(--accent))
 }
 
 .link:hover {
@@ -370,27 +371,27 @@ button:focus-visible {
 }
 
 ::-moz-selection {
-  background: hsla(235, 55%, 50%, 0.85);
+  background: hsla(259, 55%, 50%, 0.85);
   background: hsl(var(--accent) / 0.85);
   color: #f5f6f9;
   color: hsl(var(--bkg));
 }
 
 ::selection {
-  background: hsla(235, 55%, 50%, 0.85);
+  background: hsla(259, 55%, 50%, 0.85);
   background: hsl(var(--accent) / 0.85);
   color: #f5f6f9;
   color: hsl(var(--bkg));
 }
 
-.container {
+/* .container {
   width: 100%;
   max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   padding: max(1.13rem, min(calc(0.8rem + 1.63vw), 2.06rem));
   padding: var(--space-md);
-}
+} */
 
 [aria-label="Primary"] {
   width: 100%;
@@ -483,7 +484,7 @@ button:focus-visible {
   text-decoration: none;
 }
 
-.about {
+/* .about {
   display: grid;
   gap: max(1.69rem, min(calc(1.32rem + 1.85vw), 2.75rem));
   grid-gap: max(1.69rem, min(calc(1.32rem + 1.85vw), 2.75rem));
@@ -494,8 +495,8 @@ button:focus-visible {
   margin-top: var(--space-xl);
   margin-bottom: max(2.25rem, min(calc(1.6rem + 3.26vw), 4.13rem));
   margin-bottom: var(--space-xl);
-}
-
+} */
+/* 
 @media (min-width: 768px) {
   .about {
     grid-template-columns: 1fr 2fr;
@@ -503,12 +504,12 @@ button:focus-visible {
     justify-content: center;
     place-content: center;
   }
-}
+} */
 
-.about img {
-  border-radius: 100vmax;
-  border-radius: var(--radius-full);
-  height: 400px;
+.hero-img {
+  /* border-radius: 100vmax;
+  border-radius: var(--radius-full); */
+  height: 350px;
   width: min(300px, 100%);
   box-shadow: 0.2px 0.5px 0.6px #8186bb40, 1.1px 2.7px 3.3px -0.4px #8186bb40,
     2.1px 5px 6.1px -0.7px #8186bb40, 3.5px 8.3px 10.1px -1.1px #8186bb40,
@@ -516,9 +517,10 @@ button:focus-visible {
     13.3px 31.4px 38.4px -2.1px #8186bb40, 19.6px 46.3px 56.6px -2.5px #8186bb40;
   box-shadow: var(--shadow-lg);
   -o-object-fit: cover;
-  object-fit: cover;
+  object-fit: inherit;
   -o-object-position: center;
   object-position: center;
+  cursor: grab
 }
 
 @media (min-width: 768px) {
