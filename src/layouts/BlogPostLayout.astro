@@ -1,0 +1,27 @@
+---
+//components
+import Main from "./Main.astro";
+import {Image} from "@astrojs/image/components"
+const { frontmatter } = Astro.props;
+const { title, description, date, category, image } = frontmatter;
+import {slugify,formatDate} from "../utils/slugify"
+---
+
+<Main {title} {description}>
+  <header>
+    <div class="container">
+      <small>
+        <a href={`/category/${slugify(category)}`} class="badge">{category}</a>
+      </small>
+      <h1 class="h1">{title}</h1>
+      <p>{formatDate(date)}</p>
+    </div>                          
+    <Image width={1200} height={600} format={"avif"} fit={"cover"} quality={80} aspectRatio={"5:2"} src={image.src} alt={image.alt} class="hero-image"/>
+  </header>
+  <div class="post-content">
+    <div class="content">
+      <slot />
+    </div>
+    <div class="sidebar"></div>
+  </div>
+</Main>

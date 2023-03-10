@@ -371,17 +371,17 @@ button:focus-visible {
 }
 
 ::-moz-selection {
-  background: hsla(259, 55%, 50%, 0.85);
+  background: #81A1C1;
   background: hsl(var(--accent) / 0.85);
-  color: #f5f6f9;
-  color: hsl(var(--bkg));
+  color: #f5f6f9 !important;
+  /* color: hsl(var(--bkg)); */
 }
 
 ::selection {
-  background: hsla(259, 55%, 50%, 0.85);
-  background: hsl(var(--accent) / 0.85);
+  background: #81A1C1;
+  /* background: hsl(var(--accent) / 0.85); */
   color: #f5f6f9;
-  color: hsl(var(--bkg));
+  /* color: hsl(var(--bkg)); */
 }
 
 /* .container {
