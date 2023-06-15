@@ -44,7 +44,7 @@ h6 {
   --txt: var(--txt--light);
   --accent: var(--accent--light);
   --muted: var(--muted--light);
-  color-scheme: light;
+  color-scheme: dark;
   --space-2xs: max(0.31rem, min(calc(0.18rem + 0.65vw), 0.69rem));
   --space-xs: max(0.56rem, min(calc(0.39rem + 0.87vw), 1.06rem));
   --space-sm: max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem));
@@ -72,10 +72,14 @@ h6 {
   --shadow-sm: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
     0.3px 0.8px 1px -1.2px hsl(var(--_shadow) / var(--_shadow-strength)),
     0.8px 1.9px 2.3px -2.5px hsl(var(--_shadow) / var(--_shadow-strength));
-  --shadow-md: 0.2px 0.5px 0.6px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
-    0.6px 1.5px 1.8px -0.8px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
-    1.6px 3.8px 4.6px -1.7px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
-    3.9px 9.3px 11.3px -2.5px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04));
+  --shadow-md: 0.2px 0.5px 0.6px
+      hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
+    0.6px 1.5px 1.8px -0.8px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04)),
+    1.6px 3.8px 4.6px -1.7px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04)),
+    3.9px 9.3px 11.3px -2.5px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04));
   --shadow-lg: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
     1.1px 2.7px 3.3px -0.4px hsl(var(--_shadow) / var(--_shadow-strength)),
     2.1px 5px 6.1px -0.7px hsl(var(--_shadow) / var(--_shadow-strength)),
@@ -141,7 +145,6 @@ h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *:before,
   *:after {
@@ -175,16 +178,16 @@ button {
 body {
   min-height: 100vh;
   display: grid;
-  align-items: center;
-  justify-items: center;
-  place-items: center;
+  /*align-items: center;
+  justify-items: center; */
+  /* place-items: center; */
   grid-template-rows: auto 1fr auto;
-  background-color: #f5f6f9;
-  background-color: hsl(var(--bkg));
-  color: #080912;
+  /* background-color: #f5f6f9; */
+  /* background-color: hsl(var(--bkg)); */
+  /* color: #080912; */
   color: hsl(var(--txt));
-  font-size: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem));
-  font-size: var(--fs-md);
+  /* font-size: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem)); */
+  /* font-size: 5px; */
   line-height: 1.4;
   line-height: var(--lh-1-4);
   font-family: Atkinson Hyperlegible, sans-serif;
@@ -300,12 +303,13 @@ button:focus-visible {
   gap: var(--space-2xs);
   width: -moz-fit-content;
   width: fit-content;
-  padding: calc(max(0.31rem, min(calc(0.18rem + 0.65vw), 0.69rem)) * 0.75) max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem));
-  padding: calc(var(--space-2xs) * 0.75) var(--space-sm);
+  /* padding: calc(max(0.31rem, min(calc(0.18rem + 0.65vw), 0.69rem)) * 0.75) */
+  /* max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem)); */
+  padding: calc(var(--space-2xs) * 0.75) var(--space-xs);
   background-color: var(--fill);
   color: var(--type);
-  font-size: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem));
-  font-size: var(--fs-md);
+  /* font-size: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem)); */
+  font-size: 1rem;
   border-radius: 0.2em;
   border-radius: var(--radius-sm);
   border-width: 3px;
@@ -361,24 +365,28 @@ button:focus-visible {
   border-color: var(--type);
 }
 
-.link[aria-current="page"] {
-  --type: hsl(var(--accent));
-  color:hsl(var(--accent))
+.link[aria-current="page"],
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #4e5ab7;
 }
 
 .link:hover {
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  color: white;
 }
 
 ::-moz-selection {
-  background: #81A1C1;
+  background: #81a1c1;
   background: hsl(var(--accent) / 0.85);
   color: #f5f6f9 !important;
   /* color: hsl(var(--bkg)); */
 }
 
 ::selection {
-  background: #81A1C1;
+  background: #81a1c1;
   /* background: hsl(var(--accent) / 0.85); */
   color: #f5f6f9;
   /* color: hsl(var(--bkg)); */
@@ -393,7 +401,7 @@ button:focus-visible {
   padding: var(--space-md);
 } */
 
-[aria-label="Primary"] {
+/* [aria-label="Primary"] {
   width: 100%;
   padding-top: max(0.56rem, min(calc(0.39rem + 0.87vw), 1.06rem));
   padding-top: var(--space-xs);
@@ -404,26 +412,12 @@ button:focus-visible {
   box-shadow: 0.2px 0.5px 0.6px #8186bb40, 0.3px 0.8px 1px -1.2px #8186bb40,
     0.8px 1.9px 2.3px -2.5px #8186bb40;
   box-shadow: var(--shadow-sm);
-}
+} */
 
 [aria-label="Primary"] ul {
-  display: flex;
-  gap: max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem));
-  gap: var(--space-sm);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: max(1.13rem, min(calc(0.8rem + 1.63vw), 2.06rem));
-  padding-left: var(--space-md);
-  padding-right: max(1.13rem, min(calc(0.8rem + 1.63vw), 2.06rem));
-  padding-right: var(--space-md);
+  /* display: flex; */
+  /* gap: max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem)); */
+  /* gap: var(--space-sm); */
 }
 
 .logomark {
@@ -509,7 +503,7 @@ button:focus-visible {
 .hero-img {
   /* border-radius: 100vmax;
   border-radius: var(--radius-full); */
-  height: 350px;
+  /* height: 350px;
   width: min(300px, 100%);
   box-shadow: 0.2px 0.5px 0.6px #8186bb40, 1.1px 2.7px 3.3px -0.4px #8186bb40,
     2.1px 5px 6.1px -0.7px #8186bb40, 3.5px 8.3px 10.1px -1.1px #8186bb40,
@@ -520,7 +514,7 @@ button:focus-visible {
   object-fit: inherit;
   -o-object-position: center;
   object-position: center;
-  cursor: grab
+  cursor: grab; */
 }
 
 @media (min-width: 768px) {
@@ -655,7 +649,7 @@ header {
   text-align: center;
 }
 
-header .container {
+/* header .container {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -669,7 +663,7 @@ header .container {
   margin-top: var(--space-lg);
   margin-bottom: max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem));
   margin-bottom: var(--space-sm);
-}
+} */
 
 .post-content {
   display: grid;

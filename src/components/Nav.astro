@@ -2,23 +2,23 @@
 //library imports
 import { Icon } from "astro-icon";
 
-//data imports``
+//data imports
 import navData from "../data/navData";
 import Link from "./Link.astro";
 ---
 
-<nav aria-label="Primary">
-  <div class="navbar">
-    <a href="/" aria-label="Go Home" class="logomark">
+<nav class="max-w-full overflow-x-auto border-b-2 border-b-gray-700" aria-label="Primary">
+  <div class="flex items-center py-4">
+    <a class="hidden md:inline-block" href="/" aria-label="Go Home">
       <Icon name="logo" width="50" />
     </a>
-    <ul>
+    <ul class="flex ">
       {
         navData?.map((item) => (
           <Link
             href={item?.path}
             text={item.name}
-            style="secondary"
+            // style="secondary"
             isFilled={false}
             data-navLink
           />
