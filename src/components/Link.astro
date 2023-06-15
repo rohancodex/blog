@@ -21,7 +21,7 @@ const {
   borderVisible = false,
   classes,
   isFilled = true,
-  ...rest
+  ...props
 } = Astro.props;
 ---
 
@@ -33,7 +33,7 @@ const {
     style,
     { filled: isFilled, bordered: borderVisible },
   ]}
-  {...rest}
+  {...props}
 >
   {
     icon && icon.side === "left" && (
